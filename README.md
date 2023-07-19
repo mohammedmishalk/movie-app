@@ -6,7 +6,7 @@ A movie app built with React Native and Expo, using the TMDb API to fetch movie 
 
 ## Screenshots
 
-![Screenshot 1](/assets/photo_2023-07-19_12-21-37.jpg)
+![Screenshot 1](https://res.cloudinary.com/dvekmmxxx/image/upload/v1689750202/photo_2023-07-19_12-21-37_2_ujhdlh.jpg)
 ![Screenshot 2](/assets/photo_2023-07-19_12-21-37%20(2).jpg)
 
 
