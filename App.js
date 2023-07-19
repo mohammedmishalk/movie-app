@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import HomePage from './src/pages/HomePage';
+import MovieScreen from './src/pages/MovieScreen';
+import { useFonts } from 'expo-font';
+// import AppLoading from 'expo-app-loading';
+
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const [fontLoaded]=useFonts({
+    Regular:require("./assets/fonts/static/NunitoSans_10pt_Condensed-Regular.ttf"),
+    Bold:require("./assets/fonts/static/NunitoSans_10pt_Condensed-Bold.ttf")
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  });
+  return (
+    <NavigationContainer>
+        <Stack.Navigator>
+        <Stack.Screen name="home" component={HomePage} options={{headerShown:false}} />
+        <Stack.Screen name="movie" component={MovieScreen} options={{headerShown:false}} />
+        {/* Other stack screens */}
+      </Stack.Navigator>
+    </NavigationContainer>
+  ) 
+  
+}
